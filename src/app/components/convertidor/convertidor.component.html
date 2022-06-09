@@ -5,9 +5,10 @@
       <input
         type="number"
         class="form-control form-control-lg"
-        [(ngModel)] = "cantidad"
+        [(ngModel)]="cantidad"
         id="cantidad"
         placeholder="Ingrese Cantidad"
+        (input)="convertir()"
       />
     </div>
   </div>
@@ -17,10 +18,12 @@
         <label for="tengo" class="form-label">Tengo</label>
         <select
           class="form-select form-select-lg"
-          id="tengo" [(ngModel)] = "tengo"
+          id="tengo"
+          [(ngModel)]="tengo"
           aria-label="Default select example"
+          (change)="convertir()"
         >
-        <option *ngFor="let moneda of monedas;">{{ moneda }}</option>
+          <option *ngFor="let moneda of monedas">{{ moneda }}</option>
         </select>
       </div>
     </div>
@@ -29,18 +32,19 @@
       <select
         class="form-select form-select-lg"
         id="quiero"
-        [(ngModel)] = "quiero"
+        [(ngModel)]="quiero"
         aria-label="Default select example"
+        (change)="convertir()"
       >
-         <option *ngFor="let moneda of monedas;">{{ moneda }}</option>
+        <option *ngFor="let moneda of monedas">{{ moneda }}</option>
       </select>
     </div>
   </div>
   <div class="row mt-5">
-  <h5 class="text-center">
-    <span class="badge bg-success">{{ cantidad }} {{ tengo }}</span>
-    <span class="badge bg-secondary">SON</span>
-    <span class="badge bg-success">{{ total }} {{ quiero }}</span>
-  </h5>
+    <h5 class="text-center">
+      <span class="badge bg-success">{{ cantidad }} {{ tengo }}</span>
+      <span class="badge bg-secondary">SON</span>
+      <span class="badge bg-success">{{ total }} {{ quiero }}</span>
+    </h5>
   </div>
 </div>
