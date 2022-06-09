@@ -17,13 +17,10 @@
         <label for="tengo" class="form-label">Tengo</label>
         <select
           class="form-select form-select-lg"
-          id="tengo"
+          id="tengo" [(ngModel)] = "tengo"
           aria-label="Default select example"
         >
-          <option selected>Open this select menu</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+        <option *ngFor="let moneda of monedas;">{{ moneda }}</option>
         </select>
       </div>
     </div>
@@ -32,12 +29,10 @@
       <select
         class="form-select form-select-lg"
         id="quiero"
+        [(ngModel)] = "quiero"
         aria-label="Default select example"
       >
-        <option selected>Open this select menu</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+         <option *ngFor="let moneda of monedas;">{{ moneda }}</option>
       </select>
     </div>
   </div>
